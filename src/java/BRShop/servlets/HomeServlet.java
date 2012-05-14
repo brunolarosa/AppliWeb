@@ -4,8 +4,12 @@
  */
 package BRShop.servlets;
 
+import BRShop.interfaces.ICustomersRepository;
+import BRShop.repository.CustomersJavaDBRepository;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +20,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author brunolarosa
  */
+@WebServlet(name = "HomeServlet", urlPatterns = {"/Home"})
+public class HomeServlet extends HttpServlet {
 
-@WebServlet(name = "MovieServlet", urlPatterns = {"/Movie"})
-public class MovieServlet extends HttpServlet {
-
+    private ICustomersRepository customerRepository = new CustomersJavaDBRepository();
+    
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -32,23 +37,15 @@ public class MovieServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            /*
-             * TODO output your page here. You may use following sample code.
-             */
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MovieServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet MovieServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {            
-            out.close();
-        }
+        String action = request.getParameter("action");
+        String forwardTo = "index.jsp?action=home";
+        String message = "";
+        
+        RequestDispatcher dp = request.getRequestDispatcher(forwardTo + "&message=" + message);
+        dp.forward (request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

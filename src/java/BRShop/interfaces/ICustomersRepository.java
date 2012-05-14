@@ -11,10 +11,10 @@ import java.util.Collection;
  *
  * @author brunolarosa
  */
-public interface ICustomerRepository {
+public interface ICustomersRepository {
     
     
-    public void createCustomer();
+    public Customer createCustomer(String login, String password, String mail, String lastName, String firstName, String phone);
     
     /* Modify */
     
