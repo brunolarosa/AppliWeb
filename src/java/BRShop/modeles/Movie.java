@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package movies.modeles;
+package BRShop.modeles;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -79,7 +79,13 @@ public class Movie implements Serializable {
      * @param quantity 
      */
     public Movie( String title, String description, double price, String picture, int quantity)
-    {}
+    {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.picture = picture;
+        this.quantity = quantity;
+    }
  /* END CONSTRUCTOR */
 
 
@@ -106,7 +112,7 @@ public class Movie implements Serializable {
 
     @Override
     public String toString() {
-        return "movies.modeles.movie[ id=" + id + " ]";
+        return "BRShop.modeles.movie[ id=" + id + " ]";
     }
     
 }
