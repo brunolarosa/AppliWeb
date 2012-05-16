@@ -6,19 +6,133 @@
         Purpose of the stylesheet follows.
 */
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 root { 
     display: block;
+
 }
 
 body {
-    background-color: grey;
+    background-color: lightgray;
+    font-family: 'Helvetica';
 }
 
-#wrapper {
-    width: 900px;
-    margin: auto;
+/* START HEADER */
+header {
+    background: url("../img/top-bg.png") repeat-x scroll left top transparent;
+    padding-top: 10px;
+}
+/* END HEADER */
+
+header #header_wrapper {
+    margin: 0 auto;
     padding: 0;
-    
-    background-color: white;
+    width: 980px;
+    height: 155px;
 }
 
+header .header_top {
+    border-bottom: 1px solid #D4D4D4;
+}
+
+header .header_main {
+    margin: 10px auto;
+}
+
+
+/* START NAV */
+nav{
+    background: url("../img/menu-main.png") no-repeat scroll center top transparent;
+    height: 83px;
+    display: inline-block;
+    width: 100%;
+}
+
+nav #menu {
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    padding: 0;
+    width: 980px;
+} 
+
+nav #menu ul {
+    list-style-type: none;
+}
+
+nav #menu li {
+    float: left;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav #menu li a {
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Helvetica';
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 9px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #BF7102;
+    text-transform: uppercase;
+}
+
+/* END NAV */
+
+
+section.wrapper {
+    width: 980px;
+    margin: 0 auto;
+
+    background: green;
+}

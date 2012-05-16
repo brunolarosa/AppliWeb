@@ -6,23 +6,25 @@
 
 <%-- Start CAS LIST Non vide --%>
 <c:if test="${!empty moviesList}">
-    <c:forEach var="movie" items="${moviesList}">
-        <div class="oneMovie">
-            <div class="img"></div>
-            <div class="desc">
-                <div class="title">
-                    <h1>${movie.title}</h1>
+    <ul id="productsList">
+        <c:forEach var="movie" items="${moviesList}">
+            <li class="movie">
+                <div class="img"></div>
+                <div class="desc">
+                    <div class="title">
+                        <h1>${movie.title}</h1>
+                    </div>
+                    <div class="details"></div>
+                    <div class="resume">
+                        <p>${movie.description}</p>
+                    </div>
                 </div>
-                <div class="details"></div>
-                <div class="resume">
-                    <p>${movie.description}</p>
+                <div class="price">
+                    ${movie.price}
                 </div>
-            </div>
-            <div class="price">
-                ${movie.price}
-            </div>
-        </div>
-    </c:forEach>
+            </li>
+        </c:forEach>
+    </ul>
 </c:if>
 <%-- End CAS LIST Non vide --%>
 

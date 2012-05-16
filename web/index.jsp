@@ -16,28 +16,34 @@
         <title>BR Shop</title>
     </head>
     <body>
-        <div id="wrapper">
-            <header>
-                <nav>
+        <header>
+            <div id="header_wrapper">
+                <div class="header_top">
+                    Welcome visitor you can login or create an account
+                </div>
+                <div class="header_main">
+                    dfgg
+                </div>
+            </div>
+
+            <nav id="main_menu">
+                <div id="menu">
                     <ul>
                         <li><a href="Movie?action=moviesList">Home</a></li>
                         <li><a href="">Catégorie</a></li>
                     </ul>
-                </nav>
-            </header>
-            <section>
-                <c:choose>
-                    <c:when test="${param.action == 'listMovies'}">
-                        <%@include file="listMovies.jsp" %>
-                    </c:when>
-                    <c:otherwise>
-                        <%@include file="home.jsp" %>
-                    </c:otherwise>
-                </c:choose>
-            </section>
-            <footer>
-
-            </footer>
-        </div>
+                </div>
+            </nav>
+        </header>
+        <section class="wrapper">
+            <c:choose>
+                <c:when test="${param.action == 'listMovies'}">
+                    <%@include file="listMovies.jsp" %>
+                </c:when>
+                <c:otherwise>
+                    <%@include file="home.jsp" %>
+                </c:otherwise>
+            </c:choose>
+        </section>
     </body>
 </html>
